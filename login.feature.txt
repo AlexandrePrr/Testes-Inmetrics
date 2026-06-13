@@ -1,0 +1,23 @@
+Teste Automação
+
+Feature: Login no site de e-commerce
+  Scenario: Login válido
+    Given que estou na página de login
+    When eu insiro o usuário "teste2021@teste.com.br" e a senha "teste"
+    And clico em "Sign in"
+    Then devo visualizar a mensagem de boas-vindas ou o painel do usuário
+
+
+Feature: Busca de produtos
+  Scenario: Buscar produto existente
+    Given que estou na página inicial
+    When eu busco por "dress"
+    Then a lista deve exibir apenas produtos relacionados a "dress"
+
+
+Feature: Adicionar produto ao carrinho
+  Scenario: Incluir produto e validar no checkout
+    Given que estou na página de produtos
+    When eu adiciono um produto ao carrinho
+    And acesso a tela de checkout
+    Then o produto deve estar listado no resumo de pagamento
